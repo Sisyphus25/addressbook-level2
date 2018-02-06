@@ -29,6 +29,7 @@ public class Address {
         this.value = trimmedAddress;
     }
 
+
     /**
      * Returns true if a given string is a valid person address.
      */

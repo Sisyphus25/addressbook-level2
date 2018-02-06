@@ -106,12 +106,18 @@ public class Main {
      * @return result of the command
      */
     private CommandResult executeCommand(Command command)  {
+        command.setData(addressBook, lastShownList);
+        CommandResult result = command.execute();
         try {
-            command.setData(addressBook, lastShownList);
-            CommandResult result = command.execute();
             storage.save(addressBook);
             return result;
-        } catch (Exception e) {
+        }
+        catch (StorageOperationException e) {
+            ui.showToUser(e.getMessage());
+            ui.showToUser("Please ensure storage file is not set to \"Read-only\"");
+            return result;
+        }
+        catch (Exception e) {
             ui.showToUser(e.getMessage());
             throw new RuntimeException(e);
         }

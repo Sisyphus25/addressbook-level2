@@ -13,4 +13,12 @@ public class Unit {
     public String getUnit() {
         return unit;
     }
+
+    /**
+     *
+     * @return if the units are the same
+     */
+    public boolean equal(Unit other) {
+        return unit.equals(other.getUnit());
+    }
 }

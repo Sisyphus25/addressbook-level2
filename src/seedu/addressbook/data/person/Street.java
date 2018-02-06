@@ -13,4 +13,12 @@ public class Street {
     public String getStreet() {
         return street;
     }
+
+    /**
+     *
+     * @return if the streets are the same
+     */
+    public boolean equal(Street other) {
+        return street.equals(other.getStreet());
+    }
 }

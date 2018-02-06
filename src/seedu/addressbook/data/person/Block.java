@@ -13,4 +13,12 @@ public class Block {
     public String getBlock() {
         return block;
     }
+
+    /**
+     *
+     * @return if the block number is the same
+     */
+    public boolean equal(Block other) {
+        return block.equals(other.getBlock());
+    }
 }

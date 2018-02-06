@@ -13,4 +13,12 @@ public class PostalCode {
     public String getPostalCode() {
         return postalCode;
     }
+
+    /**
+     *
+     * @return if the postal codes are the same
+     */
+    public boolean equal(PostalCode other) {
+        return postalCode.equals(other.getPostalCode());
+    }
 }
